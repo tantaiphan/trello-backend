@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import indexRoutes from './router/index';
+import Routes from './router/index';
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
-app.use('/', indexRoutes);
+app.use('/', Routes);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
